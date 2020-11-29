@@ -13,6 +13,8 @@ class Book {
 //Create Store Class
 
 class store {
+
+    //get book from localstorage 
     static getBooks() {
         let books;
         if (localStorage.getItem('books') === null) {
@@ -25,11 +27,14 @@ class store {
 
     }
 
+    //add book to localstorage
     static addBook(book) {
         const books = store.getBooks();
         books.push(book);
         localStorage.setItem('books', JSON.stringify(books));
     }
+
+    //remove book from localStorage
 
     static removeBook(isbn) {
         const books = store.getBooks();
@@ -52,6 +57,9 @@ class UI {
         books.forEach((book) => UI.addBookTolist(book));
 
     }
+
+
+    //import form data into table
     static addBookTolist(book) {
         const list = document.querySelector('#book-list');
         const row = document.createElement('tr');
@@ -68,11 +76,14 @@ class UI {
         list.appendChild(row);
     }
 
+    //delete table data from table
     static deleteBook(el) {
         if (el.classList.contains('delete')) {
             el.parentElement.parentElement.remove();
         }
     }
+
+    //create alert Function
 
     static showAlert(message, className) {
         const div = document.createElement('div');
@@ -84,6 +95,8 @@ class UI {
 
         setTimeout(() => document.querySelector('.alert').remove(), 2000);
     }
+
+    //form data clear
 
     static clearFields() {
         document.querySelector('#title').value = "";
@@ -115,7 +128,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
             const book = new Book(title, author, isbn);
 
-            // console.log(book);
             //add book to list
             UI.addBookTolist(book);
 
