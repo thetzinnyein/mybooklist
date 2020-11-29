@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="fas fa-book-open"></i>My<span class="text-primary">Book</span>List
+        </h1>
+        <form action="" id="book-form">
+            <div class="form-group">
+                <label for="">Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="">Author</label>
+                <input type="text" class="form-control" id="author">
+            </div>
+            <div class="form-group">
+                <label for="">ISBN#</label>
+                <input type="text" class="form-control" id="isbn">
+            </div>
+            <input type="submit" value="Add Book" class="btn btn-primary btn-block">
+        </form>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN#</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
